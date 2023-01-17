@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class OrderConsumer {
-    private final Logger LOGGER = LoggerFactory.getLogger(OrderConsumer.class);
+    private Logger LOGGER = LoggerFactory.getLogger(OrderConsumer.class);
 
     @RabbitListener(queues = "${rabbitmq.queue.email.name}")
     public void consume(OrderEvent event) {
